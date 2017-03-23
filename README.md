@@ -28,7 +28,9 @@ Run the server
 
 APIs
 ---------------
-- Create a Message
+
+**Create a Message**
+
  - Method : POST
  - URL: http://127.0.0.1:8000/api/v1/chat-messages/
  - headers: Content-Type: application/json
@@ -55,7 +57,8 @@ APIs
          }
      }```
 
-- Get List of Messages:
+**Get List of Messages**
+
  - Method : GET
  - URL: http://127.0.0.1:8000/api/v1/chat-messages/
  - headers: Content-Type: application/json
@@ -83,7 +86,8 @@ APIs
    ```
 
 
-- Delete a message (only the user with secret token can delete it):
+**Delete a message (only the user with secret token can delete it)**
+
  - Method : DELETE
  - URL: http://127.0.0.1:8000/api/v1/chat-messages/1/
  - headers: Content-Type: application/json
@@ -107,7 +111,8 @@ APIs
    }
    ```
 
-- Delete all messages
+**Delete all messages**
+
  - Method : DELETE
  - URL: http://127.0.0.1:8000/api/v1/delete-all-messages/
  - headers: Content-Type: application/json
