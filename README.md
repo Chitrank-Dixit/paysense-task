@@ -28,18 +28,21 @@ Run the server
 
 APIs
 ---------------
-- Create a Message 
- - Method : POST 
+- Create a Message
+ - Method : POST
  - URL: http://127.0.0.1:8000/api/v1/chat-messages/
  - headers: Content-Type: application/json
- - request_body: 
-   - {
+ - request_body:
+     ```
+     {
          "text": "I am Chitrank",
          "source_ip": "192.34.23.43"
      }
+     ```
  - response_body:
-   - {
-         
+   ```
+     {
+
          "meta": {
            "status": 1000,
            "is_error": false,
@@ -50,13 +53,14 @@ APIs
            "source_ip": "192.34.23.43",
            "created_on": "23 Mar 17 07:24 PM"
          }
-     }
+     }```
 
 - Get List of Messages:
  - Method : GET
  - URL: http://127.0.0.1:8000/api/v1/chat-messages/
  - headers: Content-Type: application/json
  - response_body:
+   ```
    {
      "meta": {
       "status": 1000,
@@ -76,6 +80,7 @@ APIs
       }
      ]
    }
+   ```
 
 
 - Delete a message (only the user with secret token can delete it):
@@ -83,10 +88,13 @@ APIs
  - URL: http://127.0.0.1:8000/api/v1/chat-messages/1/
  - headers: Content-Type: application/json
  - request_body:
+   ```
    {
-	"secret_token": "liomessi10"
+      "secret_token": "liomessi10"
    }
+   ```
  - response_body:
+   ```
    {
      "meta": {
        "status": 1000,
@@ -97,16 +105,21 @@ APIs
        "message": "message 'I am just asking' has been deleted"
      }
    }
+   ```
 
 - Delete all messages
  - Method : DELETE
  - URL: http://127.0.0.1:8000/api/v1/delete-all-messages/
  - headers: Content-Type: application/json
  - request_body:
+   ```
    {
         "secret_token": "liomessi10",
    }
+   ```
+
  - response_body:
+   ```
    {
      "meta": {
        "message": "",
@@ -117,3 +130,4 @@ APIs
        "message": "All the messages has been deleted"
      }
    }
+   ```
