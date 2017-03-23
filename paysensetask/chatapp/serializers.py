@@ -7,4 +7,4 @@ class ChatMessageSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ChatMessage
-        fields = ('text', 'source_ip', 'created_on')
+        fields = ('id', 'text', 'source_ip', 'created_on')
