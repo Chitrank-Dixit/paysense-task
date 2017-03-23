@@ -54,3 +54,17 @@ class DeleteAllChatMessages(CustomMetaDataMixin, generics.DestroyAPIView):
         else:
             message = "the message can not be deleted 'secret token is not correct' "
         return Response({"message": message})
+
+
+class GetUserIp(CustomMetaDataMixin, generics.RetrieveAPIView):
+    """
+        This API throws back user's ip address
+    """
+
+    def retrieve(self, request, *args, **kwargs):
+        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+        if x_forwarded_for:
+            ip = x_forwarded_for.split(',')[0]
+        else:
+            ip = request.META.get('REMOTE_ADDR')
+        return Response({"ip_address": ip})
